@@ -43,6 +43,9 @@ You can create .resx files for any languages by following steps,
 
 2. Add [Windows Forms Control Localization default resource files](https://github.com/syncfusion/winforms-controls-localization-resx-files) of libraries you are using into `Resources` folder.
 
+**Note:**
+Consider you are using `SfDataGrid` control in your application. Then you need to copy and include `Syncfusion.SfDataGrid.WinForms.resx` (SfDataGrid present in `Syncfusion.SfDataGrid.WinForms` library) file in your application under `Resources` folder. So, now you can know the key names and values of default strings used in `Syncfusion.SfDataGrid.WinForms.dll` library.
+
 ![Included default resource file in the application](DefaultResourceFile.png)
 
 3. Now, right click on `Resources` folder and select `Add` and then `New Item`. In the `Add New Item wizard`, select Resources File option and name the file name as `Syncfusion.SfDataGrid.WinForms.<culture name>.resx` for German culture. For example, you have to give name as `Syncfusion.SfDataGrid.WinForms.de-DE.resx` for `German` culture. In the same way, add new resource files for other libraries used in your application.
