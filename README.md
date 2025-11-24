@@ -1,3 +1,61 @@
-# WinForms DataGrid Localization
-This repository contains sample which shows localization of Syncfusion WinForms DataGrid (SfDataGrid).
-https://help.syncfusion.com/windowsforms/localization#localize-syncfusion-windows-forms-control-using-resx-file
+# How to Apply Localization for WinForms DataGrid?
+
+This repository contains sample which shows localization of Syncfusion [WinForms DataGrid](https://www.syncfusion.com/winforms-ui-controls/datagrid) (SfDataGrid).
+
+You can [localize](https://help.syncfusion.com/windowsforms/localization#localize-syncfusion-windows-forms-control-using-resx-file) the `DataGrid` by adding resource file for each language.
+
+### Changing application culture
+
+When you are changing the application culture, then you can localize the application based on application culture by creating .resx file.
+
+#### C#
+
+``` csharp
+public partial class Form1 : Form
+{
+    public Form1()
+    {
+        Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("de-DE");
+        Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("de-DE");
+        InitializeComponent();
+    }
+}
+```
+
+#### VB
+
+``` vb
+Partial Public Class Form1
+	Inherits Form
+	Public Sub New()
+		Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("de-DE")
+		Thread.CurrentThread.CurrentUICulture = New System.Globalization.CultureInfo("de-DE")
+		InitializeComponent()
+	End Sub
+End Class
+```
+
+### Creating .resx files
+
+You can create .resx files for any languages by following steps,
+
+1. Right click your project and click `New Folder` and set name as `Resources`.
+
+2. Add [Windows Forms Control Localization default resource files](https://github.com/syncfusion/winforms-controls-localization-resx-files) of libraries you are using into `Resources` folder.
+
+**Note:**
+Consider you are using `SfDataGrid` control in your application. Then you need to copy and include `Syncfusion.SfDataGrid.WinForms.resx` (SfDataGrid present in `Syncfusion.SfDataGrid.WinForms` library) file in your application under `Resources` folder. So, now you can know the key names and values of default strings used in `Syncfusion.SfDataGrid.WinForms.dll` library.
+
+![Included default resource file in the application](DefaultResourceFile.png)
+
+3. Now, right click on `Resources` folder and select `Add` and then `New Item`. In the `Add New Item wizard`, select Resources File option and name the file name as `Syncfusion.SfDataGrid.WinForms.<culture name>.resx` for German culture. For example, you have to give name as `Syncfusion.SfDataGrid.WinForms.de-DE.resx` for `German` culture. In the same way, add new resource files for other libraries used in your application.
+
+![Adding custom resource file in the application](AddingCustomResourceFile.png)
+
+4. Now, select Add and add resource file for `German` culture in `Resources` folder.
+
+![Included custom resource file in the application](AddedCustomResourceFile.png)
+
+5. Now, you can copy the key names from default resource files and change its corresponding value based on the culture.
+
+![Key Values updated based on the culture](CustomResourceFileWithValue.png)
